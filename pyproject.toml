@@ -1,0 +1,44 @@
+[project]
+name = "yambda-benchmark"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Yandex"}
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "torch",
+    "polars-u64-idx==1.28.1", # https://github.com/pola-rs/polars/issues/22741
+    "click",
+    "scipy",
+    "numpy",
+    "optuna",
+    "tqdm",
+    "matplotlib"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+# list of all codes - https://docs.astral.sh/ruff/rules/
+select = [
+    "E",     # pycodestyle errors
+    "F",     # pyflakes
+    "W",     # pycodestyle warnings
+    "I",     # isort
+]
+
+[tool.ruff.lint.isort]
+lines-after-imports = 2
+known-first-party = ["yambda-benchmark"]
+
+[tool.ruff.format]
+quote-style = "preserve"
