@@ -18,6 +18,15 @@ dependencies = [
     "matplotlib"
 ]
 
+[project.urls]
+repository = "https://github.com/homutov/yambda-benchmark"
+"huggingface" = "https://huggingface.co/datasets/yandex/yambda"
+
+[tool.poetry]
+name = "yambda-benchmark"
+packages = [
+    { include = "yambda"}
+]
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
@@ -38,7 +47,7 @@ select = [
 
 [tool.ruff.lint.isort]
 lines-after-imports = 2
-known-first-party = ["yambda-benchmark"]
+known-first-party = ["yambda"]
 
 [tool.ruff.format]
 quote-style = "preserve"
